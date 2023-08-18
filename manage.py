@@ -2,6 +2,8 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+import django_heroku
+import dj_database_url
 
 
 def main():
@@ -20,3 +22,9 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static files')
+STATICFILES_DIR = (os.path.join(BASE_DIR, 'static'),)
+
+django_heroku.settings(locals())
